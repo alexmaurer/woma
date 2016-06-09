@@ -1,0 +1,21 @@
+{
+  "name": "woma",
+  "version": "1.0.0",
+  "description": "A tool for We Olive managers to aid in wine list management, staffing and scheduling information",
+  "main": "server.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1",
+    "start": "node server.js"
+  },
+  "keywords": [
+    "We",
+    "Olive"
+  ],
+  "author": "Alex Maurer",
+  "license": "ISC",
+  "dependencies": {
+    "body-parser": "^1.15.1",
+    "express": "^4.13.4",
+    "mongojs": "^2.4.0"
+  }
+}

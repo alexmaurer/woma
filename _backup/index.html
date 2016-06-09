@@ -1,0 +1,98 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<title>We Olive - Manager Assistant</title>
+	<!-- AngularJS -->
+	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<!-- Bootstrap -->
+	<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.6/css/bootstrap.min.css" integrity="sha384-1q8mTJOASx8j1Au+a5WDVnPi2lkFfwwEAa8hDDdjZlpLegxhjVME1fgjWPGmkzs7" crossorigin="anonymous">
+	<!-- CSS -->
+	<link rel="stylesheet" href="/styles/main.css">
+</head>
+
+<body>
+	<div ng-app="oliveApp">
+
+		<div class="container" ng-controller="winelistController as vm">
+			<h1>Wine List Manager</h1>
+			<div class="new-wine">
+
+				<form class="form" role="form">
+					<div class="row">
+						<div class="col-xs-6">
+							<div class="form-group">
+
+								<select class="form-control" ng-model="vm.wine.style" ng-options="style as style for style in vm.wineStyles"></select>
+							</div>
+							<div class="form-group">
+
+								<input class="form-control" type="text" ng-model="vm.wine.varietal" placeholder="Varietal..." />
+							</div>
+							<div class="form-group">
+
+								<input class="form-control" type="text" ng-model="vm.wine.winery" placeholder="Winery..." />
+							</div>
+						</div>
+
+
+						<div class="col-xs-6">
+							<div class="form-group">
+
+								<input class="form-control" type="text" ng-model="vm.wine.region" placeholder="Region..." />
+							</div>
+							<div class="form-group">
+
+								<input class="form-control" type="number" ng-model="vm.wine.vintage" max="vm.currentYear" placeholder="Vintage..." />
+							</div>
+							<div class="form-group">
+
+								<input class="form-control" type="number" ng-model="vm.wine.price" placeholder="Enter Price ($0.00)">
+							</div>
+
+						</div>
+						<div class="col-xs-12">
+							<div class="form-group">
+								<textarea rows="4" class="form-control" ng-model="vm.wine.description" placeholder="Describe this wine..."></textarea>
+							</div>
+						</div>
+						<div class="col-xs-12">
+							<div class="form-group">
+								<button class="btn btn-primary form-control" ng-click="vm.addWine(vm.wine)">Add Wine</button>
+							</div>
+						</div>
+					</div>
+
+				</form>
+			</div>
+			<p>&nbsp;</p>
+			<p>&nbsp;</p>
+			<table class="table">
+				<tr>
+					<th>Style</th>
+					<th>Varietal</th>
+					<th>Winery</th>
+					<th>Region</th>
+					<th>Vintage</th>
+					<th>Price ($)</th>
+				</tr>
+				<tr ng-repeat="wine in vm.wines" >
+					<td>{{ wine.style }}</td>
+					<td>{{ wine.varietal }}</td>
+					<td>{{ wine.winery }}</td>
+					<td>{{ wine.region }}</td>
+					<td>{{ wine.vintage }}</td>
+					<td>{{ wine.price }}</td>
+				</tr>
+			</table>
+		</div>
+	</div>
+
+	<!-- Scripts -->
+	<script src="/app/app.js"></script>
+	<script src="/app/winelistController.js"></script>
+	<script src="/app/services/wineFactory.js" ></script>
+</body>
+
+</html>
