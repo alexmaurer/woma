@@ -11,6 +11,7 @@
 			factory.getBonusData().success(function (data) {
 				vm.bonusData = data[0];
 				vm.monthlySalary = data[0].salary/12;
+				console.log(data[0]);
 				console.log('SUCCESS: Bonus Information Received');
 			}).error(function (data, status, headers, config) {
 				$log.log(data.error + ' ' + status);

@@ -114,13 +114,31 @@ div#yelpheader, #recentreviews {
 	display: none;
 }
 
-.yelpreviewimg {
+.yelp-img {
 	border-radius: 5px;
 	margin: 10px;
 }
 
-.reviewername {
+.reviewer-name {
+	font-size: 16px;
 	font-weight: 600;
+	margin-left: 10px;
+}
+
+.review-body {
+	font-size: 18px;
+	font-style: italic;
+	line-height: 1.5em;
+	margin: 10px;
+}
+
+.review-body>a {
+	color: cornflowerblue;
+}
+.review-date {
+	font-size: 16px;
+	margin-left: 10px;
+	font-style: italic;
 }
 
 #landing-container {

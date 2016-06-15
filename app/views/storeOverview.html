@@ -76,7 +76,7 @@
 				<div class="panel-heading"><strong>Location Details</strong></div>
 				<div class="panel-body">
 					<p><strong>Phone: </strong>{{ vm.storeInformation.phone }} </p>
-					
+
 					<address>
 						<strong>We Olive &amp; Wine Bar</strong><br>
 					{{vm.storeInformation.address.street1}}<br>
@@ -90,10 +90,32 @@
 		</div>
 		<div class="col-xs-6">
 			<div class="panel panel-success">
-				<div class="panel-heading"><strong>Recent Reviews</strong></div>
+				<div class="panel-heading"><strong>Latest Yelp Review</strong></div>
+
 				<div class="panel-body">
+
 					<div id="reviews">
+						<!-- Yelp Widget ------
 						<div id='yelpwidget'></div>
+						-->
+						
+						<div class="media">
+							<div class="media-left">
+								<div class="review-date" >{{ (vm.review.time_created*1000) | date: "MM/dd/yy" }}</div>
+								<div class="reviewer-name">{{ vm.review.user.name }}</div>
+								<a href="#">
+									<img class="yelp-img" class="media-object" ng-src="{{ vm.review.user.image_url }}" alt="Yelp reviewer's profile photo">
+								</a>
+							</div>
+							<div class="media-body">
+								<img ng-src="{{ vm.review.rating_image_large_url }}" alt="Yelp Rating">
+								<p class="media-heading review-body">{{ vm.review.excerpt }} <a href="http://www.yelp.com/biz/we-olive-and-wine-bar-los-gatos?hrid={{vm.review.id}}">Read More</a> </p>
+								
+							</div>
+						</div>
+						
+							
+						
 					</div>
 				</div>
 			</div>

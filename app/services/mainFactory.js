@@ -37,6 +37,10 @@
 		factory.getVendor = function () {
 			return $http.get('/vendors');
 		};
+		
+		factory.getYelpReview = function () {
+			return $http.get('/yelp');
+		};
 
 		return factory;
 
