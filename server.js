@@ -2,14 +2,16 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongojs = require('mongojs');
-var wineDB = mongojs('winelist', ['winelist']);
-var staffDB = mongojs('staff', ['staff']);
-var storeInfoDB = mongojs('storeInfo', ['storeInfo']);
-var salesDB = mongojs('sales', ['sales']);
-var bonusDataDB = mongojs('bonusData', ['bonusData']);
-var vendorsDB = mongojs('vendors', ['vendors']);
+var wineDB = mongojs('mongodb://admin:bigbux32@ds011374.mlab.com:11374/heroku_w7l9z1x2/winelist', ['winelist']);
+var staffDB = mongojs('mongodb://admin:bigbux32@ds011374.mlab.com:11374/heroku_w7l9z1x2/staff', ['staff']);
+var storeInfoDB = mongojs('mongodb://admin:bigbux32@ds011374.mlab.com:11374/heroku_w7l9z1x2/storeInfo', ['storeInfo']);
+var salesDB = mongojs('mongodb://admin:bigbux32@ds011374.mlab.com:11374/heroku_w7l9z1x2/sales', ['sales']);
+var bonusDataDB = mongojs('mongodb://admin:bigbux32@ds011374.mlab.com:11374/heroku_w7l9z1x2/bonusData', ['bonusData']);
+var vendorsDB = mongojs('mongodb://admin:bigbux32@ds011374.mlab.com:11374/heroku_w7l9z1x2/vendors', ['vendors']);
 
-var port = 3000;
+// var port = 3000;
+
+var port = process.env.PORT || 8080;
 
 app.use(express.static(__dirname));
 app.use(bodyParser.json());
