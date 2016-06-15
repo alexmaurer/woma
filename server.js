@@ -9,8 +9,8 @@ var salesDB = mongojs('sales', ['sales']);
 var bonusDataDB = mongojs('bonusData', ['bonusData']);
 var vendorsDB = mongojs('vendors', ['vendors']);
 
-// var port = process.env.PORT || 8080;
-var port = 3000;
+var port = process.env.PORT || 8080;
+// var port = 3000;
 
 var Yelp = require('yelp');
 
