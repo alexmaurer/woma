@@ -1,5 +1,102 @@
-<div>View from storeOverview.html
+<div>
 
-	<h1> {{ vm.greeting }} </h1>
-	<h2> {{ vm.factoryGreeting }} </h2>
+	<h3> {{ vm.title }}</h3>
+	<p>&nbsp;</p>
+	<!-- Trigger the modal with a button -->
+	<button type="button" class="btn btn-warning btn-simple btn-xs add-button" data-toggle="modal" data-target="#myModal">
+		<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Store Info</button>
+
+	<!-- Modal -->
+	<div class="modal fade" id="myModal" role="dialog">
+		<div class="modal-dialog">
+			<!-- Modal content-->
+			<div class="modal-content">
+				<div class="modal-header">
+					<button type="button" class="close" data-dismiss="modal">&times;</button>
+					<h4 class="modal-title">Edit Store Information</h4>
+				</div>
+				<div class="modal-body">
+					<p>Manager's Information</p>
+					<div class="form-group">
+
+						<input class="form-control" type="text" ng-model="vm.storeInformation.manager.firstName" placeholder="First Name" required />
+					</div>
+					<div class="form-group">
+
+						<input class="form-control" type="text" ng-model="vm.storeInformation.manager.lastName" placeholder="Last Name" required />
+					</div>
+					<div class="form-group">
+
+						<input class="form-control" type="text" ng-model="vm.storeInformation.manager.email" placeholder="Email" required />
+					</div>
+					<p>Store Information</p>
+					<div class="form-group">
+
+						<input class="form-control" type="text" ng-model="vm.storeInformation.address.street1" placeholder="Street Address" required />
+					</div>
+					<div class="form-group">
+
+						<input class="form-control" type="text" ng-model="vm.storeInformation.address.street2" placeholder="Suite or Unit #" required />
+					</div>
+					<div class="form-group">
+
+						<input class="form-control" type="text" ng-model="vm.storeInformation.address.city" placeholder="City" required />
+					</div>
+					<div class="form-group">
+
+						<input class="form-control" type="text" ng-model="vm.storeInformation.address.state" placeholder="State" required />
+					</div>
+					<div class="form-group">
+
+						<input class="form-control" type="text" ng-model="vm.storeInformation.address.zip" placeholder="Zip Code" required />
+					</div>
+					<div class="form-group">
+
+						<input class="form-control" type="text" ng-model="vm.storeInformation.phone" placeholder="Phone Number" required />
+					</div>
+				</div>
+				<div class="modal-footer">
+					<button type="button" class="btn btn-primary" ng-click="vm.updateStoreInfo()" data-dismiss="modal">Save</button>
+					<button type="button" class="btn btn-default" ng-click="vm.refresh()" data-dismiss="modal">Close</button>
+				</div>
+			</div>
+
+		</div>
+	</div>
+	<div class="row">
+		<div class="col-xs-6">
+			<div class="panel panel-success">
+				<div class="panel-heading"><strong>Manager Details</strong></div>
+				<div class="panel-body">
+					<p><strong>Name: </strong>{{vm.storeInformation.manager.firstName}} {{ vm.storeInformation.manager.lastName }}</p>
+					<p><strong>Email: </strong>{{ vm.storeInformation.manager.email }} </p>
+				</div>
+			</div>
+			<div class="panel panel-success">
+				<div class="panel-heading"><strong>Location Details</strong></div>
+				<div class="panel-body">
+					<p><strong>Phone: </strong>{{ vm.storeInformation.phone }} </p>
+					
+					<address>
+						<strong>We Olive &amp; Wine Bar</strong><br>
+					{{vm.storeInformation.address.street1}}<br>
+					{{vm.storeInformation.address.city}}, {{vm.storeInformation.address.state}} {{vm.storeInformation.address.zip}}<br>
+					</address>
+					<p>&nbsp;</p>
+					<iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3176.970535549922!2d-121.98485858409384!3d37.22467437986343!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x808e35faa08b6491%3A0x2fcc2009c99ca390!2s112+N+Santa+Cruz+Ave%2C+Los+Gatos%2C+CA+95030!5e0!3m2!1sen!2sus!4v1465827763094" width="100%" frameborder="0" style="border:0" allowfullscreen></iframe>
+				</div>
+			</div>
+
+		</div>
+		<div class="col-xs-6">
+			<div class="panel panel-success">
+				<div class="panel-heading"><strong>Recent Reviews</strong></div>
+				<div class="panel-body">
+					<div id="reviews">
+						<div id='yelpwidget'></div>
+					</div>
+				</div>
+			</div>
+		</div>
+	</div>
 </div>

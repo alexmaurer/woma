@@ -1,6 +1,6 @@
 (function() {
 	
-	var app = angular.module('myApp', ['ngRoute']);
+	var app = angular.module('myApp', ['ngRoute', 'ngMaterial']);
 	
 	app.config(function ($routeProvider) {
 
@@ -32,6 +32,14 @@
 			.when('/bonusCalculator', {
 			controller: 'bonusCalculatorController as vm',
 			templateUrl: 'app/views/bonusCalculator.html'
+		})
+			.when('/sales', {
+			controller: 'salesController as vm',
+			templateUrl: 'app/views/sales.html'
+		})
+			.when('/vendors', {
+			controller: 'vendorsController as vm',
+			templateUrl: 'app/views/vendors.html'
 		})
 			.otherwise({ redirectTo: '/' });
 	});

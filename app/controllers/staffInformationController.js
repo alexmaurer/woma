@@ -5,12 +5,12 @@
 		var vm = this;
 		vm.title = 'Staff Information';
 		vm.staff = null;
-		vm.addPerson = false;
 
 		vm.refresh = function () {
 			factory.getStaff().success(function (data) {
 				vm.staff = data;
 				vm.person = "";
+				console.log(data);
 				console.log('SUCCESS: Staff Information Received');
 			}).error(function (data, status, headers, config) {
 				$log.log(data.error + ' ' + status);

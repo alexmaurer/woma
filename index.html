@@ -19,8 +19,16 @@
 	<!-- CSS Files -->
 	<link href="assets/css/bootstrap.min.css" rel="stylesheet" />
 	<link rel="stylesheet" href="assets/css/woma.css" />
+	<link rel="stylesheet" href="assets/css/animations.css">
 	<!-- AngularJS -->
 	<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.4.5/angular.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/angular.js/1.4.0/angular-animate.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-aria.min.js"></script>
+	<script src="http://ajax.googleapis.com/ajax/libs/angularjs/1.5.3/angular-messages.min.js"></script>
+	<!-- Angular Material Library & CSS -->
+	<script src="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.js"></script>
+	<link rel="stylesheet" href="http://ajax.googleapis.com/ajax/libs/angular_material/1.1.0-rc2/angular-material.min.css">
+
 </head>
 
 <body ng-app="myApp">
@@ -42,10 +50,12 @@
 				<ul>
 					<li><a href="#/storeOverview">Store Overview</a></li>
 					<li><a href="#/staffInformation">Staff Information</a></li>
-					<li><a href="#/schedule">Schedule</a></li>
 					<li><a href="#/winelist">Wine List</a></li>
-					<li><a href="#/wineEducation">Wine Education</a></li>
 					<li><a href="#/bonusCalculator">Bonus Calculator</a></li>
+					<li><a href="#/sales">Sales Tracking</a></li>
+					<li><a href="#/vendors">Vendors</a></li>
+					<li class="hidden"><a href="#/schedule">Schedule</a></li>
+					<li class="hidden"><a href="#/wineEducation">Wine Education</a></li>
 
 				</ul>
 			</div>
@@ -69,6 +79,8 @@
 <script src="app/controllers/winelistController.js"></script>
 <script src="app/controllers/wineEducationController.js"></script>
 <script src="app/controllers/bonusCalculatorController.js"></script>
+<script src="app/controllers/salesController.js"></script>
+<script src="app/controllers/vendorsController.js"></script>
 <script src="app/services/mainFactory.js"></script>
 <script src="scripts/angular-route.min.js"></script>
 
@@ -84,5 +96,8 @@
 
 <!-- jQuery Animations -->
 <script src="assets/js/animations.js"></script>
+
+
+
 
 </html>

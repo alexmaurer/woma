@@ -1,0 +1,53 @@
+<h3> {{ vm.title }} </h3>
+<h6> <strong>Todays' Date: </strong>{{ vm.today | date:'MM/dd/yyyy' }} </h6>
+<p>&nbsp;</p>
+
+
+
+<div class="panel panel-success" id="sales-entry">
+	<div class="panel-heading">
+		<h3 class="panel-title">Create New Sales Entry</h3>
+	</div>
+	<div class="panel-body">
+		<md-content>
+			Date:
+			<md-datepicker ng-model="vm.entry.date" md-placeholder="Enter date" required></md-datepicker>
+		</md-content>
+
+		<h5>Sales Revenue:</h5>
+		<div class="form-group">
+			<input class="form-control" size="10" type="number" ng-model="vm.entry.totalSales" placeholder="Sales ($0.00)" required />
+		</div>
+		<h5>Description:</h5>
+		<div class="form-group">
+			<textarea class="form-control" rows="6" maxlength="200" ng-model="vm.entry.description" placeholder="Enter desciption..." required></textarea>
+		</div>
+		<button class="btn btn-primary form-control" ng-click="vm.addSalesEntry()">Add Sales Entry</button>
+	</div>
+</div>
+
+
+<p>&nbsp;</p>
+
+<table class="table table-condensed">
+	<tr class="success">
+		<th>Date</th>
+		<th>Sales</th>
+		<th>Description</th>
+		<th>&nbsp;</th>
+	</tr>
+	<tr ng-repeat="item in vm.sales | orderBy:vm.sortBy:vm.reverse">
+
+		<td>{{ item.date| date:"MM/dd/yyyy" }}</td>
+		<td>{{ item.totalSales | currency: "$":2 }}</td>
+		<td>
+			<button type="button" class="btn btn-primary btn-simple btn-xs" data-toggle="tooltip" data-placement="top" title="{{item.description}}">see details</button>
+		</td>
+		<td>
+			<button type="button" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs" ng-click="vm.removeSalesEntry(item._id)">
+				<i class="fa fa-times"></i>
+			</button>
+		</td>
+
+	</tr>
+</table>`

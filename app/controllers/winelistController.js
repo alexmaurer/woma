@@ -12,6 +12,7 @@
 			factory.getWines().success(function(data) {
 				vm.wines = data;
 				vm.wine = "";
+				console.log(data);
 				console.log('SUCCESS: Wine List Received');
 			}).error(function(data, status, headers, config) {
 				$log.log(data.error + ' ' + status);

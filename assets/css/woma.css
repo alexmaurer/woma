@@ -89,6 +89,10 @@ ul>li:hover{
 	margin-bottom: 5px;
 }
 
+.edit-button {
+	margin-bottom: 5px;
+}
+
 .modal-header {
 	background-color: #b3bc20;
 	color: floralwhite;
@@ -105,3 +109,56 @@ ul>li:hover{
 	padding: 25px;
 	max-width: 800px;
 }
+
+div#yelpheader, #recentreviews {
+	display: none;
+}
+
+.yelpreviewimg {
+	border-radius: 5px;
+	margin: 10px;
+}
+
+.reviewername {
+	font-weight: 600;
+}
+
+#landing-container {
+	background-color: #202020;
+	border: 20px solid #b3bc20;
+	border-radius: 50px;
+	margin: 0 auto;
+	margin-top: 50px;
+	padding-top: 32px;
+	padding-bottom: 32px;
+	width: 300px;
+}
+
+#landing-title {
+	color: floralwhite;
+	font-family: 'Poiret One';
+	font-size: 80px;
+	text-align: center;
+}
+
+#landing-version {
+	color: floralwhite;
+	font-family: 'Poiret One';
+	font-size: 20px;
+	text-align: center;
+}
+
+#sales-entry {
+	max-width: 400px;
+}
+
+textarea {
+	resize: none;
+}
+
+label {
+	margin-right: 5px;
+}
+
+
+

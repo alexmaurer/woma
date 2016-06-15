@@ -5,7 +5,7 @@
 		var vm = this;
 		vm.name = 'Amanda';
 		vm.factoryGreeting = mainFactory.greeting();
-		
+
 		console.log('Hello from mainController.js');
 
 	}

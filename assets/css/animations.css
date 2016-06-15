@@ -1,0 +1,37 @@
+#landing-container {
+	animation-name: titleRise;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 0.75s;
+}
+
+#landing-title {
+	opacity: 0;
+	animation-name: fadeIn;
+	animation-delay: 0.5s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 1.0s;
+	animation-fill-mode:forwards;
+}
+
+#landing-version {
+	opacity: 0;
+	animation-name: fadeIn;
+	animation-delay: 1.0s;
+	animation-iteration-count: 1;
+	animation-timing-function: ease-out;
+	animation-duration: 2.0s;
+	animation-fill-mode:forwards;
+}
+
+@keyframes titleRise {
+	0% {
+		transform: translateY(3000px);
+	}
+	100% {
+		transform: translateY(0);
+	}
+}
+
+@keyframes fadeIn { from { opacity: 0; } to { opacity: 1; } }
