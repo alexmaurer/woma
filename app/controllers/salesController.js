@@ -1,6 +1,6 @@
 (function () {
 
-	var salesController = function (mainFactory, $http) {
+	var salesController = function (mainFactory, $http, $log) {
 
 		var vm = this;
 		vm.title = "Sales Tracking"

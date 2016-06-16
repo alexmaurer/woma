@@ -1,6 +1,6 @@
 (function () {
 
-	var vendorsController = function ($http, mainFactory) {
+	var vendorsController = function ($http, $log, mainFactory) {
 
 		var vm = this;
 		vm.title = "Vendor List"

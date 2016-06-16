@@ -1,6 +1,6 @@
 (function () {
 
-	var storeOverviewController = function ($http, mainFactory) {
+	var storeOverviewController = function ($http, $log, mainFactory) {
 
 		var vm = this;
 		vm.title = 'Store Overview';

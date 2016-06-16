@@ -1,6 +1,6 @@
 (function () {
 
-	var bonusCalculatorController = function ($http, mainFactory) {
+	var bonusCalculatorController = function ($http, $log, mainFactory) {
 
 		var vm = this;
 		vm.title = "Monthly Sales Bonus Calculator";
