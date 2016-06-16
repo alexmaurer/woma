@@ -2,15 +2,19 @@ var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongojs = require('mongojs');
-var wineDB = mongojs('winelist', ['winelist']);
-var staffDB = mongojs('staff', ['staff']);
-var storeInfoDB = mongojs('storeInfo', ['storeInfo']);
-var salesDB = mongojs('sales', ['sales']);
-var bonusDataDB = mongojs('bonusData', ['bonusData']);
-var vendorsDB = mongojs('vendors', ['vendors']);
+var url = 'mongodb://maurer:FC1gvPM1F2eYnzsWzJClpRG1unbacpytYV3VZbQvK3uB9FaUDZoDQPeKTXJYZlZisE4xlLICpAedSuG1v0patw==@maurer.documents.azure.com:10250/woma?ssl=true';
+
+var wineDB = mongojs(url, ['winelist']);
+var staffDB = mongojs(url, ['staff']);
+var storeInfoDB = mongojs(url, ['storeInfo']);
+var salesDB = mongojs(url, ['sales']);
+var bonusDataDB = mongojs(url, ['bonusData']);
+var vendorsDB = mongojs(url, ['vendors']);
 
 var port = process.env.PORT || 8080;
 // var port = 3000;
+
+
 
 var Yelp = require('yelp');
 

@@ -1,6 +1,6 @@
 (function () {
 
-	var staffInformationController = function ($http, mainFactory) {
+	var staffInformationController = function ($http, $log, mainFactory) {
 
 		var vm = this;
 		vm.title = 'Staff Information';
