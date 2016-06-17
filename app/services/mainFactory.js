@@ -41,6 +41,7 @@
 		factory.getYelpReview = function () {
 			return $http.get('/yelp');
 		};
+		
 
 		return factory;
 

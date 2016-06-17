@@ -1,11 +1,11 @@
 <div>
 	<h3> {{ vm.title }} </h3>
 	<p>&nbsp;</p>
-	
-	
+
+
 
 	<div class="container">
-	
+
 		<!-- Trigger the modal with a button -->
 		<button type="button" class="btn btn-warning btn-simple btn-xs add-button" data-toggle="modal" data-target="#myModal">
 			<i class="fa fa-pencil-square-o" aria-hidden="true"></i> Edit Bonus Info</button>
@@ -24,37 +24,37 @@
 						<form class="form-inline">
 							<div class="form-group">
 
-							<input class="form-control" type="number" ng-model="vm.bonusData.salary" placeholder="Annual Salary" required />
-						</div>
+								<input class="form-control" type="number" ng-model="vm.bonusData.salary" placeholder="Annual Salary" required />
+							</div>
 						</form>
 						<p>&nbsp;</p>
 						<div class="row">
 							<div class="col-xs-6">
 								<h4>Sales Targets</h4>
-								
-									
-									<table>
-										<tr ng-repeat="item in vm.bonusData.month">
-											<td>
-												<label>{{item.name}}:</label>  
-											</td>
-											<td>
-												<form class="form-inline">
-													<div class="form-group">
-														<input class="form-control" type="number" ng-model="item.target" placeholder="Enter Sales Target" required />
-													</div>
-												</form>
-											</td>
-										</tr>
-									</table>
-								
+
+
+								<table>
+									<tr ng-repeat="item in vm.bonusData.month">
+										<td>
+											<label>{{item.name}}:</label>
+										</td>
+										<td>
+											<form class="form-inline">
+												<div class="form-group">
+													<input class="form-control" type="number" ng-model="item.target" placeholder="Enter Sales Target" required />
+												</div>
+											</form>
+										</td>
+									</tr>
+								</table>
+
 							</div>
 							<div class="col-xs-6">
 								<h4>Actual Sales</h4>
 								<table>
 									<tr ng-repeat="item in vm.bonusData.month">
 										<td>
-											<label>{{item.name}}: </label>  
+											<label>{{item.name}}: </label>
 										</td>
 										<td>
 											<form class="form-inline">
@@ -67,10 +67,10 @@
 								</table>
 							</div>
 						</div>
-						
-						
-						
-						
+
+
+
+
 					</div>
 					<div class="modal-footer">
 						<button type="button" class="btn btn-primary" ng-click="vm.updateBonusData()" data-dismiss="modal">Save</button>
@@ -80,9 +80,9 @@
 
 			</div>
 		</div>
-	
+
 		<div class="row">
-			<div class="col-xs-6">
+			<div class="col-xs-4">
 				<div class="panel panel-success">
 					<div class="panel-heading"><strong>General Manager Salary Information</strong></div>
 					<div class="panel-body">
@@ -91,7 +91,7 @@
 					</div>
 				</div>
 			</div>
-			<div class="col-xs-6">
+			<div class="col-xs-5">
 				<div class="panel panel-success">
 					<div class="panel-heading"><strong>Bonus Structure</strong></div>
 
@@ -116,24 +116,28 @@
 					</table>
 				</div>
 			</div>
+			<div class="col-xs-3"></div>
+						
+		</div>
+		<div class="table-responsive">
+			<table class="table table-condensed">
+				<tr class="success">
+					<th>Month</th>
+					<th>Sales Target</th>
+					<th>Actual Sales</th>
+					<th>% of Target Sales</th>
+					<th>Expected Bonus</th>
+				</tr>
+				<tr ng-repeat="item in vm.bonusData.month">
+					<td> {{ item.name }} </td>
+					<td> {{ item.target | currency: "$":2 }} </td>
+					<td> {{ item.actual | currency: "$":2 }} </td>
+					<td> {{ (item.actual / item.target)*100 | number:2 }}% </td>
+					<td>{{ vm.getBonusPayout(item.actual, item.target) | currency: "$":2 }}</td>
+				</tr>
+			</table>
 		</div>
 
-		<table class="table table-condensed">
-			<tr class="success">
-				<th>Month</th>
-				<th>Sales Target</th>
-				<th>Actual Sales</th>
-				<th>% of Target Sales</th>
-				<th>Expected Bonus</th>
-			</tr>
-			<tr ng-repeat="item in vm.bonusData.month">
-				<td> {{ item.name }} </td>
-				<td> {{ item.target | currency: "$":2 }} </td>
-				<td> {{ item.actual | currency: "$":2 }} </td>
-				<td> {{ (item.actual / item.target)*100 | number:2 }}% </td>
-				<td>{{ vm.getBonusPayout(item.actual, item.target) | currency: "$":2 }}</td>
-			</tr>
-		</table>
 
 
 	</div>

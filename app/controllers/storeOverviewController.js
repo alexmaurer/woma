@@ -5,6 +5,8 @@
 		var vm = this;
 		vm.title = 'Store Overview';
 		vm.storeInformation = {};
+		vm.sales = {};
+		var l = null;
 		vm.review = null;
 
 		vm.refresh = function () {
@@ -15,11 +17,21 @@
 			}).error(function (data, status, headers, config) {
 				$log.log(data.error + ' ' + status);
 			});
-			
-			factory.getYelpReview().success(function(data) {
+
+			factory.getYelpReview().success(function (data) {
 				console.log('getting Yelp review...');
 				vm.review = data[0];
 				console.log(data[0]);
+			});
+
+			factory.getSales().success(function (data) {
+				console.log("Getting Sales...");
+				vm.sales = data;
+				l = data.length;
+				vm.chartData();
+				console.log(data[0]);
+			}).error(function (data, status, headers, config) {
+				$log.log(data.error + ' ' + status);
 			});
 		}
 
@@ -47,6 +59,16 @@
 
 		vm.getYelpReviews();
 		*/
+
+		// Chart
+		vm.chartData = function () {
+			vm.labels = ["", "", "", "", "", "", ""];
+			vm.series = ['Daily Sales'];
+			vm.data = [[vm.sales[l - 7].totalSales, vm.sales[l - 6].totalSales, vm.sales[l - 5].totalSales, vm.sales[l - 4].totalSales, vm.sales[l - 3].totalSales, vm.sales[l - 2].totalSales, vm.sales[l - 1].totalSales]];
+			vm.onClick = function (points, evt) {
+				console.log(points, evt);
+			};
+		}
 
 		vm.refresh();
 

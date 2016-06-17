@@ -98,10 +98,10 @@
 						<!-- Yelp Widget ------
 						<div id='yelpwidget'></div>
 						-->
-						
+
 						<div class="media">
 							<div class="media-left">
-								<div class="review-date" >{{ (vm.review.time_created*1000) | date: "MM/dd/yy" }}</div>
+								<div class="review-date">{{ (vm.review.time_created*1000) | date: "MM/dd/yy" }}</div>
 								<div class="reviewer-name">{{ vm.review.user.name }}</div>
 								<a href="#">
 									<img class="yelp-img" class="media-object" ng-src="{{ vm.review.user.image_url }}" alt="Yelp reviewer's profile photo">
@@ -110,14 +110,26 @@
 							<div class="media-body">
 								<img ng-src="{{ vm.review.rating_image_large_url }}" alt="Yelp Rating">
 								<p class="media-heading review-body">{{ vm.review.excerpt }} <a href="http://www.yelp.com/biz/we-olive-and-wine-bar-los-gatos?hrid={{vm.review.id}}">Read More</a> </p>
-								
+
 							</div>
 						</div>
-						
-							
-						
+
+
+
 					</div>
 				</div>
+				
+				<div class="panel panel-success">
+				<div class="panel-heading"><strong>Last 7 Days of Recorded Sales</strong></div>
+				<div class="panel-body">
+					<canvas id="line" class="chart chart-line" chart-data="vm.data"
+							chart-labels="vm.labels" chart-legend="true" chart-series="vm.series"
+							chart-click="vm.onClick" >
+					</canvas> 
+					
+				</div>
+			</div>
+				
 			</div>
 		</div>
 	</div>
