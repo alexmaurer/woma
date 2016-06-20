@@ -1,0 +1,21 @@
+<div>View from staffBonus.html
+
+	<h1> {{ vm.greeting }} </h1>
+	<h2> {{ vm.factoryGreeting }} </h2>
+</div>
+
+
+<table>
+	<tr>
+		<th>Name</th>
+		<th>Hours Worked</th>
+	</tr>
+	<tr ng-repeat= "item in vm.staff">
+		<td>{{ item.firstName }} {{item.lastName }}</td>
+		<td><input type="text" ng-model="item.hoursWorked"></td>
+	</tr>
+	<tr>
+		<td>{{ vm.staff.length }}</td>
+		<td>{{ vm.totalHours() }}</td>
+	</tr>
+</table>

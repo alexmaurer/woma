@@ -41,6 +41,10 @@
 			controller: 'vendorsController as vm',
 			templateUrl: 'app/views/vendors.html'
 		})
+			.when('/staffBonus', {
+			controller: 'staffBonusController as vm',
+			templateUrl: 'app/views/staffBonus.html'
+		})
 			.otherwise({ redirectTo: '/' });
 	});
 	
