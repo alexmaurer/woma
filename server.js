@@ -1,10 +1,12 @@
-var url = process.env.MONGODB_URI;
-console.log(url);
-
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
 var mongojs = require('mongojs');
+
+var port = process.env.PORT || 8080;
+// var port = 3000;
+var url = process.env.MONGODB_URI;
+console.log(url);
 
 var wineDB = mongojs(url, ['winelist']);
 var staffDB = mongojs(url, ['staff']);
@@ -13,19 +15,13 @@ var salesDB = mongojs(url, ['sales']);
 var bonusDataDB = mongojs(url, ['bonusData']);
 var vendorsDB = mongojs(url, ['vendors']);
 
-
-var port = process.env.PORT || 8080;
-// var port = 3000;
-
-
-
 var Yelp = require('yelp');
 
 var yelp = new Yelp({
-	consumer_key: 'bTmSbtbA7lECbrVFGPF1BQ',
-	consumer_secret: 'jtypmdUjr0lWKXLjlrruSXRm-vI',
-	token: 'LWC0kgydEgWyGnv68ALWWRr98WKf7T51',
-	token_secret: 'lUmUnWHPsJfN_w-IoEouKCcC7SE'
+	consumer_key: process.env.YELP_CONSUMER_KEY,
+	consumer_secret: process.env.YELP_CONSUMER_SECRET,
+	token: process.env.YELP_TOKEN,
+	token_secret: process.env.YELP_TOKEN_SECRET
 });
 
 // Yelp Review
