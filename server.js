@@ -1,3 +1,6 @@
+var url = process.env.MONGODB_URI;
+console.log(url);
+
 var express = require('express');
 var app = express();
 var bodyParser = require('body-parser');
@@ -10,7 +13,7 @@ var salesDB = mongojs(url, ['sales']);
 var bonusDataDB = mongojs(url, ['bonusData']);
 var vendorsDB = mongojs(url, ['vendors']);
 
-var url = process.env.MONGODB_URI;
+
 var port = process.env.PORT || 8080;
 // var port = 3000;
 
